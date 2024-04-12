@@ -30,9 +30,9 @@ export async function mailSender({ email, emailType, userId }: any) {
             subject = "Verify your email ID";
             htmlTemplate = `
                 <p>Verify your email address by clicking the button below:</p>
-                <a href="http://localhost:3000/verify?token=${generatedToken}"><button>Verify</button></a>
+                <a href="http://localhost:3000/verifyemail?token=${generatedToken}"><button>Verify</button></a>
                 <p>If the button doesn't work, copy and paste this link into your browser:</p>
-                <p>http://localhost:3000/api/user/verify?token=${generatedToken}</p>
+                <p>http://localhost:3000/api/user/verifyemail?token=${generatedToken}</p>
             `;
         } else if (emailType === 'RESET') {
             subject = "Reset your password";

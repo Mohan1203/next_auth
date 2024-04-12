@@ -21,10 +21,9 @@ export async function POST(req: NextRequest) {
         })
         const savedUser = await newUser.save()
         await mailSender({ email: data.email, emailType: "VERIFY", userId: savedUser._id })
-        return NextResponse.json(savedUser)
+        return NextResponse.json({ message: "Email send to your email address please verify" }, { status: 200 })
 
     } catch (error) {
-        console.log(error)
         return NextResponse.error()
     }
 }
